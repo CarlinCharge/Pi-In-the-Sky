@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
       @favorite_objects.each do |object|
         response = call_breezy_api(object)
-        # binding.pry
+      
         unless response.nil?
           object.assign_attributes(breezometer_aqi: response["breezometer_aqi"], dominant_pollutant_description: response["dominant_pollutant_description"], breezometer_description: response["breezometer_description"] )
 
